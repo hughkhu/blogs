@@ -1,7 +1,7 @@
 # Site settings
 title: Wilbert's Blog
 url: "http://hughkhu.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
-baseurl: "/blog" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
+baseurl: "/blogs" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
   One or more sentences introducing this blog.
@@ -15,7 +15,7 @@ profile: Will & Heart.
 #github_username:  github_username
 profile_links:
   Email: "mailto:uipinkhu@qq.com"
-  GitHub: "https://github.com/hughkhu/easyblog"
+  GitHub: "https://github.com/hughkhu/blogs"
   # You can add more profile links above, or edit _includes/sidebar.html 
 
 # Comment Service (Disqus or 多说)
