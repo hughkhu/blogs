@@ -8,6 +8,7 @@ permalink: /archivers/imgprocess
 <!-- # 图像处理算子笔记 -->
 # 1. Harris角点检测
 构造大小为$2 \times 2$ 的 $M$ 矩阵：
+
 $$
 \begin{aligned}
 & E(u,v) = \sum {w(x,y)(I(x+u,y+v) - I(x,y))^2} = \sum {w(x,y) [u, v] M [u,v]^T} \\\\
@@ -137,8 +138,8 @@ $$
 # 6. HOG - Histogram of Oriented Gradient
 方向梯度直方图特征，可结合SVM进行运用。
 
-1. 一般取8x8（其他值也行）的窗口作为cell，cell中每个像素计算梯度方向和梯度模长，构造直方图（一般9个bin），得到9维特征向量。
+1. 一般取 $8 \times 8$（其他值也行）的窗口作为 `cell`， `cell` 中每个像素计算梯度方向和梯度模长，构造直方图（一般 $9$ 个 `bin` ），得到 $9$ 维特征向量。
 
-2. 一般取2x2个cell组成block，那么block为16x16大小，故每个block有2x2x9=36个特征。
+2. 一般取 $2 \times 2$ 个 `cell` 组成 `block`，那么 `block` 为 $16 \times 16$ 大小，故每个 `block` 有 $2 \times 2 \times 9 = 36$ 个特征。
 
-3. 滑动每个block，假设stride为8，那么对64x128的图像而言，一共滑动7x15次，故整张图的特征数为36x7x15=3780。
+3. 滑动每个 `block`，假设 `stride` 为 $8$ ，那么对 $64 \times 128$ 的图像而言，一共滑动 $7 \times 15$ 次，故整张图的特征数为 $36 \times 7 \times 15 = 3780$ 。
