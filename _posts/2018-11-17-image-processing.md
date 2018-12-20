@@ -56,6 +56,7 @@ $$
 & \theta = \sqrt{\frac{G_y}{G_x}}
 \end{aligned}
 $$
+
 - 如果以上的角度$\theta$`等于零，即代表图像该处拥有纵向边缘，左方较右方暗。
 
 # 3. Laplace Operator 锐化
