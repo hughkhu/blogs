@@ -5,9 +5,12 @@ date:   2018-11-17 22:00:13
 categories: Algorithm
 permalink: /archivers/imgprocess
 ---
+
+This article introduces several image processing operators, such as Harris, Soblel, Laplace, LoG, DoG, HOG, etc.
+
+<!--more-->
+
 <!-- # 图像处理算子笔记 -->
-This article introduces several image processing operators, 
-such as Harris, Soblel, Laplace, LoG, DoG, HOG, etc.
 # 1. Harris角点检测
 构造大小为$2 \times 2$ 的 $M$ 矩阵：
 

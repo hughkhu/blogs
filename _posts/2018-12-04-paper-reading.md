@@ -5,7 +5,11 @@ date:   2018-12-04 22:00:00
 categories: Research
 permalink: /archivers/papers
 ---
+
 This article lists important research papers about 3D Face Reconstruction.
+
+<!--more-->
+
 <!-- # Paper Reading -->
 # 1. 3D Face From Image
 - 3D Face Reconstruction from a Single Image Using a Single Reference Face Shape 
