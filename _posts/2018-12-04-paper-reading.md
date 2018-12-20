@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Paper Reading Lists"
-date:   2014-12-30 09:00:13
+date:   2018-12-04 22:00:00
 categories: Research
 permalink: /archivers/papers
 ---
