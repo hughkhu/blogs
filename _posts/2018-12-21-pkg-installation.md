@@ -7,7 +7,9 @@ permalink: /archivers/installpkgs
 ---
 
 This article consists of several notes about `tensorflow` and `pytorch` installation.
-
+$$
+\text{tensorflow} + \text{pytorch}
+$$
 <!--more-->
 
 # 0. Table about Envs and Pkgs
@@ -54,7 +56,7 @@ pip install dlib # only dlib
 python demo.py -i e:\0tmp -o e:\0tmp --isDlib True # test tf & dlib
 ~~~
 
-$\ast$ pip 安装时，会检查 dist-info 或 egg-info; conda安装时，则检查 conda-meta.
+$^{\ast}$ pip 安装时，会检查 dist-info 或 egg-info; conda安装时，则检查 conda-meta.
 如果先pip后conda是可以同时装的; 反之，pip会认为已经装了，但是如果强行--ignore-installed还是可以再装一个。同时存在两个同名的pkg容易产生冲突。
 
 # 3. Install Pytorch 
@@ -70,5 +72,5 @@ conda install pytorch torchvision -c pytorch  # slow, sucesss in py 3.5
 conda install -c 1adrianb face_alignment 
 ~~~
 
-$\ast\ast$ 首先是在py 3.6 通过清华源安装pytorch（因为比官网命令快），但是import torch 报dll not load 的错误，网上有说是openmp的dll的问题，多次尝试都无法成功。conda新建py3.6环境，再用官网命令依旧不行。最终通过删除相关package，在新建一个py3.5环境，使用官网命令成功。怀疑py3.6.0有问题，有人提到可以直接升级py3.6.0到3.6.1解决。
+$^{\ast\ast}$ 首先是在py 3.6 通过清华源安装pytorch（因为比官网命令快），但是import torch 报dll not load 的错误，网上有说是openmp的dll的问题，多次尝试都无法成功。conda新建py3.6环境，再用官网命令依旧不行。最终通过删除相关package，在新建一个py3.5环境，使用官网命令成功。怀疑py3.6.0有问题，有人提到可以直接升级py3.6.0到3.6.1解决。
 
