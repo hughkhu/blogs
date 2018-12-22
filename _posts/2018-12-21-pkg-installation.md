@@ -43,7 +43,19 @@ pyt|
 # 2. Install Tensorflow 
 Install tensorflow in Anaconda envs, install scikit-image, Dlib alongside.
 
-It is recommended to use conda first, $ab+c$ why not? $\text{avoid pip}^{\ast}$ as possible (2 pkgs may be installed when use pip first and conda later). 
+$$
+\begin{aligned}
+& \frac{\partial G}{\partial \sigma} = \sigma \nabla^2 G \\\\
+
+& G(x,y,k\sigma) - 
+G(x,y,\sigma)  \approx
+(k-1)\sigma^2\nabla^2 G \\\\
+
+& DoG(f)(x,y,\sigma_1,\sigma_2) = G(x,y,\sigma_1) - G((x,y,\sigma_2)
+\end{aligned}
+$$
+
+It is recommended to use conda first, $ ab+c $ why not? $\text{avoid pip}^{\ast}$ as possible (2 pkgs may be installed when use pip first and conda later). 
 
 ~~~bash
 conda create -n face python==3.6 # create new env
