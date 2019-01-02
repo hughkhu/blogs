@@ -39,8 +39,8 @@ pyt|
 - Install `CUDNN 7`.
 - (recommended) Install `Anaconda` and set channels (`C:/users/username/.condarc`)
     ~~~bash
-    conda config --add channels channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/  
-    conda config --add channels channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/  
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
     conda config --set show_channel_urls yes  
     ~~~
 
