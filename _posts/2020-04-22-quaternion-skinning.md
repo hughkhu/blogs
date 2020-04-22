@@ -1,6 +1,17 @@
-# Quaternion and Skinning
+---
+layout: post
+title:  "Quaternion and Skinning Notes"
+date:   2020-04-22 11:40:00
+categories: Algorithm
+permalink: /archivers/quaternion-skinning
 
-## 1. Quaternion
+---
+
+This article introduces quaternion, dual-quaternion and their applications in skinning area.
+
+<!--more-->
+
+# 1. Quaternion
 
 ​	[wiki](https://en.wikipedia.org/wiki/Quaternion)
 
@@ -53,7 +64,7 @@
 
   
 
-## 2. Dual Quaternion
+# 2. Dual Quaternion
 
 ​	[wiki](https://en.wikipedia.org/wiki/Dual_quaternion)
 
@@ -103,7 +114,7 @@
 
   **pay attention that** $\bar{\hat{\mathbf{q}}^{*}}=\mathbf{q}_{0}^{*} - \varepsilon \mathbf{q}_{\varepsilon}^{*}$
 
-## 3. SBS
+# 3. SBS
 
 *Spherical blend skinning: A real-time deformation of articulated models*
 
@@ -135,7 +146,7 @@
   =&Q\left(\mathbf{v}-\mathbf{r}_{c}\right)+\sum_{i=1}^{n} w_{i} C_{j_{i}} \mathbf{r}_{c}
   \end{aligned}$
 
-## 4. DQS
+# 4. DQS
 
   *Skinning with dual quaternions*
 
