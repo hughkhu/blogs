@@ -98,7 +98,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   $$\hat{\mathbf{q}}^{-1}=\frac{\hat{\mathbf{q}}^{\star}}{\|\hat{\mathbf{q}}\|^{2}}$$
 
-  Unit dual quaternions are those satisfying $\|\hat{\mathbf{q}} \| = 1$, a dual quaternion $\hat{\mathbf{q}}$ is unit if and only if $ \|\mathbf{q}_0\|=1 $ and $ \left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle=0 $ 
+  Unit dual quaternions are those satisfying $\|\hat{\mathbf{q}} \| = 1$, a dual quaternion $\hat{\mathbf{q}}$ is unit if and only if $$ \|\mathbf{q}_0 \|=1 $$ and $$ \left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle=0 $$ 
 
   The norm is *multiplicative* $\|\hat{\mathbf{p}} \hat{\mathbf{q}}\|=\|\hat{\mathbf{p}}\|\|\hat{\mathbf{q}}\|$
 
@@ -136,25 +136,34 @@ This article introduces quaternion, dual-quaternion and their applications in sk
   C_{i}=\left[\begin{matrix}C_{i}^{r o t} & \mathbf{C}_{i}^{t r} \\ \mathbf{0}^{T} & 1\end{matrix}\right]
   $$
 
-    $\begin{aligned} C_{a}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{a}^{r} &=C_{b}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{b}^{t r} \\\left(C_{a}^{r o t}-C_{b}^{r o t}\right) \mathbf{r}_{c} &=\mathbf{C}_{b}^{t r}-\mathbf{C}_{a}^{t r} \end{aligned}$
+  $$
+  \begin{aligned}
+C_{a}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{a}^{r} &=C_{b}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{b}^{t r} \\\left(C_{a}^{r o t}-C_{b}^{r o t}\right) \mathbf{r}_{c} &=\mathbf{C}_{b}^{t r}-\mathbf{C}_{a}^{t r} \end{aligned}
+  $$
 
   If we stack all these equations to one matrix $D$ and the right-hand sides to vector $\mathbf{e}$, we can write the whole system as $D \mathbf{r}_{c}=\mathbf{e}$, where $D$ is a $3\left(\begin{array}{l}n \\ 2\end{array}\right) \times 3$ matrix. Just solve this equation and get $\mathbf{r}_c$.
 
 - **QLERP** is good enough though it is inferior than **SLERP**
 
-  $q\left(W ; C_{j_{1}}, \ldots, C_{j_{n}}\right)=\left[\begin{matrix}Q & \mathbf{m} \\ \mathbf{0}^{T} & 1\end{matrix}\right]$
+  $$
+  q\left(W ; C_{j_{1}}, \ldots, C_{j_{n}}\right)=\left[\begin{matrix}Q & \mathbf{m} \\ \mathbf{0}^{T} & 1\end{matrix}\right]
+  $$
 
   the rotation submatrices $C_{j_i}^{rot}$ are converted to quaternions $\mathbf{q}_{j_i}$
 
-  $\mathbf{s}_{n}=\mathbf{s} /\|\mathbf{s}\|$, where $\mathbf{s}=w_{1} \mathbf{q}_{j_{1}}+\ldots+w_{n} \mathbf{q}_{j_{n}}$,  $\mathbf{s}_{n}$ is converted to the rotation matrix $Q$
+  $$\mathbf{s}_{n}=\frac{\mathbf{s}}{\|\mathbf{s}\|}$$ , where $$\mathbf{s}=w_{1} \mathbf{q}_{j_{1}}+\ldots+w_{n} \mathbf{q}_{j_{n}}$$,  $$\mathbf{s}_{n}$$ is converted to the rotation matrix $$Q$$
 
-  $\mathbf{m}=\sum_{i=1}^{n} w_{i} \mathbf{C}_{j_{i}}^{t r}$
+  $$\mathbf{m}=\sum_{i=1}^{n} w_{i} \mathbf{C}_{j_{i}}^{t r}$$
   
-  $T=\left[\begin{matrix}I & \mathbf{r}_{c} \\ \mathbf{0}^{T} & 1\end{matrix}\right]$
+  $$
+  T=\left[\begin{matrix}I & \mathbf{r}_{c} \\ \mathbf{0}^{T} & 1\end{matrix}\right]
+  $$
   
-  $\begin{aligned}\mathbf{v}^{\prime}=&T q\left(W ; T^{-1} C_{j_{1}} T, \ldots, T^{-1} C_{j_{n}} T\right) T^{-1} \mathbf{v}\\
+  $$
+  \begin{aligned}\mathbf{v}^{\prime}=&T q\left(W ; T^{-1} C_{j_{1}} T, \ldots, T^{-1} C_{j_{n}} T\right) T^{-1} \mathbf{v}\\
   =&Q\left(\mathbf{v}-\mathbf{r}_{c}\right)+\sum_{i=1}^{n} w_{i} C_{j_{i}} \mathbf{r}_{c}
-  \end{aligned}$
+  \end{aligned}
+  $$
 
 # 4. DQS
 
@@ -174,17 +183,17 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   **output:** transformed vertex position $\mathbf{v}^{\prime}$ and normal $\mathbf{v}_n^{\prime}$
 
-  ​	$\hat{\mathbf{b}}=w_{1} \hat{\mathbf{q}}_{j_{1}}+\ldots+w_{n} \hat{\mathbf{q}}_{j_{n}}$
+  ​	$$\hat{\mathbf{b}}=w_{1} \hat{\mathbf{q}}_{j_{1}}+\ldots+w_{n} \hat{\mathbf{q}}_{j_{n}}$$
 
-  ​	// denote the non-dual part of $\hat{\mathbf{b}}$ as $\hat{\mathbf{b}}_0$ and the dual one as $\hat{\mathbf{b}}_{\epsilon}$ 
+  ​	// denote the non-dual part of $\hat{\mathbf{b}}$ as $$\hat{\mathbf{b}}_0$$ and the dual one as $$\hat{\mathbf{b}}_{\epsilon}$$ 
 
-  ​	$\mathbf{c}_{0}=\mathbf{b}_{0} /\left\|\mathbf{b}_{0}\right\|$
+  ​	$$\mathbf{c}_{0}=\mathbf{b}_{0} /\left\|\mathbf{b}_{0}\right\|$$
   
-  ​	$\mathbf{c}_{\epsilon}=\mathbf{b}_{\epsilon} /\left\|\mathbf{b}_{0}\right\|$
+  ​	$$\mathbf{c}_{\epsilon}=\mathbf{b}_{\epsilon} /\left\|\mathbf{b}_{0}\right\|$$
   
   ​	// denote the components of $\mathbf{c}_0$ as $w_0, x_0, y_0, z_0$
   
-  ​	// denote the components of $\mathbf{c}_{\epsilon}$ as $w_{\epsilon}, x_{\epsilon}, y_{\epsilon}, z_{\epsilon}$
+  ​	// denote the components of $$\mathbf{c}_{\epsilon}$$ as $$w_{\epsilon}, x_{\epsilon}, y_{\epsilon}, z_{\epsilon}$$
   
     ​	$t_{0}=2\left(-w_{\epsilon} x_{0}+x_{\epsilon} w_{0}-y_{\epsilon} z_{0}+z_{\epsilon} y_{0}\right)$  
   
@@ -196,7 +205,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 ​			$\mathbf{v}^{\prime}=M \mathbf{v}$ where $\mathbf{v}$ has form $\mathbf{v} = (v_0, v_1, v_2, 1)$
 
-​			$\mathbf{v}_n^{\prime}=M \mathbf{v}_n$ where $\mathbf{v}$ has form $\mathbf{v}_n = (v_{n,0}, v_{n,1}, v_{n,2}, 1)$
+​			$$\mathbf{v}_n^{\prime}=M \mathbf{v}_n$$ where $$\mathbf{v}$$ has form $$\mathbf{v}_n = (v_{n,0}, v_{n,1}, v_{n,2}, 1)$$
 
 ​			Note that the formulas for $t_0, t_1, t_2$ are simply the expanded forms of quaternion product $2\mathbf{c}_{\epsilon}\mathbf{c}_0^\star$
 
