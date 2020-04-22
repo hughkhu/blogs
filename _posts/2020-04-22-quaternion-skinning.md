@@ -94,11 +94,11 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - Norm and Inverse
 
-  $\|\hat{\mathbf{q}}\|=\sqrt{\hat{\mathbf{q}}^{\star} \hat{\mathbf{q}}}=\left\|\mathbf{q}_{0}\right\|+\epsilon \frac{\left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle}{\left\|\mathbf{q}_{0}\right\|}$
+  $$ \|\hat{\mathbf{q}}\|=\sqrt{\hat{\mathbf{q}}^{\star} \hat{\mathbf{q}}}=\left\|\mathbf{q}_{0}\right\|+\epsilon \frac{\left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle}{\left\|\mathbf{q}_{0}\right\|} $$
 
-  $\hat{\mathbf{q}}^{-1}=\frac{\hat{\mathbf{q\star}^{\star}}{\|\hat{\mathbf{q}}\|^{2}}$
+  $$\hat{\mathbf{q}}^{-1}=\frac{\hat{\mathbf{q}}^{\star}}{\|\hat{\mathbf{q}}\|^{2}}$$
 
-  Unit dual quaternions are those satisfying $\|\hat{\mathbf{q}} \| = 1$, a dual quaternion $\hat{\mathbf{q}}$ is unit if and only if $\|\mathbf{q}_0\|=1$ and $\left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle=0$ 
+  Unit dual quaternions are those satisfying $\|\hat{\mathbf{q}} \| = 1$, a dual quaternion $\hat{\mathbf{q}}$ is unit if and only if $ \|\mathbf{q}_0\|=1 $ and $ \left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle=0 $ 
 
   The norm is *multiplicative* $\|\hat{\mathbf{p}} \hat{\mathbf{q}}\|=\|\hat{\mathbf{p}}\|\|\hat{\mathbf{q}}\|$
 
@@ -114,13 +114,13 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   - given a (dual) quaternion represents rotaion $\mathbf{q}_0$
   - and a quaternion represents translation $\mathbf{t}:= (t_xi+t_yj+t_zk)=(0, t_x,t_y,t_z)$
-  - $\hat{\mathbf{q}}=\hat{\mathbf{t}}\mathbf{q}_0=\left(1+\frac{\epsilon}{2}\left(t_{x} i+t_{y} j+t_{z} k\right)\right) \mathbf{q}_{0}=\mathbf{q}_{0}+\frac{\epsilon}{2}\left(t_{x} i+t_{y} j+t_{z} k\right) \mathbf{q}_{0}=\mathbf{q}_{0}+\frac{\epsilon}{2} \mathbf{t}\mathbf{q}_{0}$
+  - $$\hat{\mathbf{q}}=\hat{\mathbf{t}}\mathbf{q}_0=\left(1+\frac{\epsilon}{2}\left(t_{x} i+t_{y} j+t_{z} k\right)\right) \mathbf{q}_{0}=\mathbf{q}_{0}+\frac{\epsilon}{2}\left(t_{x} i+t_{y} j+t_{z} k\right) \mathbf{q}_{0}=\mathbf{q}_{0}+\frac{\epsilon}{2} \mathbf{t}\mathbf{q}_{0}$$
   
 - Transformation
 
   $\hat{v}^{\prime}=\hat{\mathbf{q}} \cdot \hat{v} \cdot \bar{\hat{\mathbf{q}}^{\star}}$
 
-  **pay attention that** $\bar{\hat{\mathbf{q}}^{\star}}=\mathbf{q}_{0}^{\star} - \epsilon \mathbf{q}_{\epsilon}^{\star}$
+  **pay attention that** $$\bar{\hat{\mathbf{q}}^{\star}}=\mathbf{q}_{0}^{\star} - \epsilon \mathbf{q}_{\epsilon}^{\star}$$
 
 # 3. SBS
 
