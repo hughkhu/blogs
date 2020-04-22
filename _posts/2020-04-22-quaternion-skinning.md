@@ -19,42 +19,39 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   $$ Q=q_{0}+q_{1} \mathbf{i}+q_{2} \mathbf{j}+q_{3} \mathbf{k} \quad q_{i} \in \mathbb{R}, i=0, \ldots, 3 $$
 
-  $\mathbf{i} \cdot \mathbf{i}=\mathbf{j} \cdot \mathbf{j}=\mathbf{k} \cdot \mathbf{k}=\mathbf{i} \cdot \mathbf{j} \cdot \mathbf{k}=-1$
+  $$\mathbf{i} \cdot \mathbf{i}=\mathbf{j} \cdot \mathbf{j}=\mathbf{k} \cdot \mathbf{k}=\mathbf{i} \cdot \mathbf{j} \cdot \mathbf{k}=-1$$
 
-  $\mathbf{i} \cdot \mathbf{j}=-\mathbf{j} \cdot \mathbf{i}=\mathbf{k} \quad \mathbf{j} \cdot \mathbf{k}=-\mathbf{k} \cdot \mathbf{j}=\mathbf{i} \quad \mathbf{k} \cdot \mathbf{i}=-\mathbf{i} \cdot \mathbf{k}=\mathbf{j}$
+  $$\mathbf{i} \cdot \mathbf{j}=-\mathbf{j} \cdot \mathbf{i}=\mathbf{k} \quad \mathbf{j} \cdot \mathbf{k}=-\mathbf{k} \cdot \mathbf{j}=\mathbf{i} \quad \mathbf{k} \cdot \mathbf{i}=-\mathbf{i} \cdot \mathbf{k}=\mathbf{j}$$
 
 - Conjugate, Norm and Inverse
 
-  $Q=\left(q_{0}, \vec{q}\right)$
+  $$Q=\left(q_{0}, \vec{q}\right)$$
 
-  $Q^{\star}=\left(q_{0},-\vec{q}\right)$
+  $$Q^{\star}=\left(q_{0},-\vec{q}\right)$$
 
-  $\|Q\|^{2}=Q \cdot Q^{\star}=q_{0}^{2}+q_{1}^{2}+q_{2}^{2}+q_{3}^{2}$
+  $$\|Q\|^{2}=Q \cdot Q^{\star}=q_{0}^{2}+q_{1}^{2}+q_{2}^{2}+q_{3}^{2}$$
 
-  $Q^{-1} = Q^{\star} /\|Q\|^{2}$
+  $$Q^{-1} = Q^{\star} /\|Q\|^{2}$$
 
 - Multiplication
 
-  $Q \cdot P=\left(q_{0} p_{0}-\vec{q} \cdot \vec{p}, q_{0} \vec{p}+p_{0} \vec{q}+\vec{q} \times \vec{p}\right)$
+  $$Q \cdot P=\left(q_{0} p_{0}-\vec{q} \cdot \vec{p}, q_{0} \vec{p}+p_{0} \vec{q}+\vec{q} \times \vec{p}\right)$$
 
 - The norm is *multiplicative*
 
-  $\|PQ\| = \|P\|\|Q\|$
+  $$\|PQ\| = \|P\|\|Q\|$$
 
 - Unit Quaternion
 
-  Given a rotation matrix $R=\exp (\widehat{\omega} \theta)$, the associated unit quaternion is
+  Given a rotation matrix $R=\exp (\widehat{\omega} \theta)$, the associated unit quaternion is $$Q=(\cos (\theta / 2), \omega \sin (\theta / 2))$$
 
-  $Q=(\cos (\theta / 2), \omega \sin (\theta / 2))$
-
-- Rotation between A and C is given by 
-
-  $Q_{a c}=Q_{a b} \cdot Q_{b c}$
+- Rotation between A and C is given by $$Q_{a c}=Q_{a b} \cdot Q_{b c}$$
 
 
-- A quaternion $\mathbf{t}:= (t_xi+t_yj+t_zk)=(0, t_x,t_y,t_z)$ corresponds to vector $(t_x, t_y, t_z)$
 
-- to rotation matrix for $\mathbf{q}^{\prime}=w+x i+y j+z k$
+- A quaternion $$\mathbf{t}:= (t_xi+t_yj+t_zk)=(0, t_x,t_y,t_z)$$ corresponds to vector $$(t_x, t_y, t_z)$$
+
+- to rotation matrix for $$\mathbf{q}^{\prime}=w+x i+y j+z k$$
 
   $$
   \left[
@@ -68,7 +65,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - Rotation, for unit quaternion
 
-  $\mathbf{v}^{\prime} = \mathbf{q} \mathbf{v}\mathbf{q}^{\star}$, where $\mathbf{v} = (0, \vec{v})$
+  $$\mathbf{v}^{\prime} = \mathbf{q} \mathbf{v}\mathbf{q}^{\star}$$, where $$\mathbf{v} = (0, \vec{v})$$
 
   
 
