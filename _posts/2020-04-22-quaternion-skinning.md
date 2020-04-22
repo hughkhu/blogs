@@ -80,7 +80,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - Definition
 
-  $\hat{\mathbf{q}}=\mathbf{q}_{0}+\epsilon \mathbf{q}_{\epsilon}$  where $\epsilon^2=0$
+  $$\hat{\mathbf{q}}=\mathbf{q}_{0}+\epsilon \mathbf{q}_{\epsilon}$$  where $\epsilon^2=0$
 
   if $\hat{\mathbf{q}}$ isunit dual quaternion, the rotation is just a matrix representation of $\mathbf{q_0}$ and the translation is given by the vector part of $2\mathbf{q}_{\epsilon}\mathbf{q}_0^{\star}$
 
@@ -130,9 +130,11 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   it is possible to define the rotation center as the point whose transformations by associated matrices are as close as possible. This minimizes the drift and works even if the vertex is assigned to $n$ joints $j_1,\cdots, j_n$. We find the center of rotation $\mathbf{r}_c$ as the least-squares solution of the system of $\left(\begin{array}{l}n \\ 2\end{array}\right)$ linear vector equations.
 
-    $C_{a} \mathbf{r}_{c}=C_{b} \mathbf{r}_{c}, a<b, a, b \in\left\{j_{1}, \ldots, j_{n}\right\}$
+    $$C_{a} \mathbf{r}_{c}=C_{b} \mathbf{r}_{c}, a<b, a, b \in\left\{j_{1}, \ldots, j_{n}\right\}$$
 
-    $C_{i}=\left[\begin{matrix}C_{i}^{r o t} & \mathbf{C}_{i}^{t r} \\ \mathbf{0}^{T} & 1\end{matrix}\right]$
+  $$
+  C_{i}=\left[\begin{matrix}C_{i}^{r o t} & \mathbf{C}_{i}^{t r} \\ \mathbf{0}^{T} & 1\end{matrix}\right]
+  $$
 
     $\begin{aligned} C_{a}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{a}^{r} &=C_{b}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{b}^{t r} \\\left(C_{a}^{r o t}-C_{b}^{r o t}\right) \mathbf{r}_{c} &=\mathbf{C}_{b}^{t r}-\mathbf{C}_{a}^{t r} \end{aligned}$
 
@@ -160,7 +162,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - Dual quaternion Linear Blending
 
-  $D L B\left(\mathbf{w} ; \hat{\mathbf{q}}_{1}, \ldots, \hat{\mathbf{q}}_{n}\right)=\frac{w_{1} \hat{\mathbf{q}}_{1}+\ldots+w_{n} \hat{\mathbf{q}}_{n}}{\left\|w_{1} \hat{\mathbf{q}}_{1}+\ldots+w_{n} \hat{\mathbf{q}}_{n}\right\|}$
+  $$\begin{equation} D L B\left(\mathbf{w} ; \hat{\mathbf{q}}_{1}, \ldots, \hat{\mathbf{q}}_{n}\right)=\frac{w_{1} \hat{\mathbf{q}}_{1}+\ldots+w_{n} \hat{\mathbf{q}}_{n}}{\left\|w_{1} \hat{\mathbf{q}}_{1}+\ldots+w_{n} \hat{\mathbf{q}}_{n}\right\|} \end{equation}$$
 
 - Algorithm
 
@@ -190,7 +192,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
   
     ​	$t_{2}=2\left(-w_{\epsilon} z_{0}-x_{\epsilon} y_{0}+y_{\epsilon} x_{0}+z_{\epsilon} w_{0}\right)$				
 
-​			$M=\left[\begin{matrix}1-2 y_{0}^{2}-2 z_{0}^{2} & 2 x_{0} y_{0}-2 w_{0} z_{0} & 2 x_{0} z_{0}+2 w_{0} y_{0} & t_{0} \\ 2 x_{0} y_{0}+2 w_{0} z_{0} & 1-2 x_{0}^{2}-2 z_{0}^{2} & 2 y_{0} z_{0}-2 w_{0} x_{0} & t_{1} \\ 2 x_{0} z_{0}-2 w_{0} y_{0} & 2 y_{0} z_{0}+2 w_{0} x_{0} & 1-2 x_{0}^{2}-2 y_{0}^{2} & t_{2}\end{matrix}\right]$
+​			$$ M=\left[\begin{matrix}1-2 y_{0}^{2}-2 z_{0}^{2} & 2 x_{0} y_{0}-2 w_{0} z_{0} & 2 x_{0} z_{0}+2 w_{0} y_{0} & t_{0} \\ 2 x_{0} y_{0}+2 w_{0} z_{0} & 1-2 x_{0}^{2}-2 z_{0}^{2} & 2 y_{0} z_{0}-2 w_{0} x_{0} & t_{1} \\ 2 x_{0} z_{0}-2 w_{0} y_{0} & 2 y_{0} z_{0}+2 w_{0} x_{0} & 1-2 x_{0}^{2}-2 y_{0}^{2} & t_{2}\end{matrix}\right] $$
 
 ​			$\mathbf{v}^{\prime}=M \mathbf{v}$ where $\mathbf{v}$ has form $\mathbf{v} = (v_0, v_1, v_2, 1)$
 
