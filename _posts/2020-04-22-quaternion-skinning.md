@@ -138,7 +138,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 C_{a}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{a}^{r} &=C_{b}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{b}^{t r} \\\left(C_{a}^{r o t}-C_{b}^{r o t}\right) \mathbf{r}_{c} &=\mathbf{C}_{b}^{t r}-\mathbf{C}_{a}^{t r} \end{aligned}
   $$
 
-  If we stack all these equations to one matrix $D$ and the right-hand sides to vector $\mathbf{e}$, we can write the whole system as $D \mathbf{r}_{c}=\mathbf{e}$, where $D$ is a $3\left(\begin{array}{l}n \\ 2\end{array}\right) \times 3$ matrix. Just solve this equation and get $\mathbf{r}_c$.
+  If we stack all these equations to one matrix $D$ and the right-hand sides to vector $\mathbf{e}$, we can write the whole system as $D \mathbf{r}_{c}=\mathbf{e}$, where $D$ is a $$3\left(\begin{array}{l}n \\ 2\end{array}\right) \times 3$$ matrix. Just solve this equation and get $\mathbf{r}_c$.
 
 - **QLERP** is good enough though it is inferior than **SLERP**
 
@@ -146,7 +146,7 @@ C_{a}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{a}^{r} &=C_{b}^{r o t} \mathbf{r}_{c}+\
   q\left(W ; C_{j_{1}}, \ldots, C_{j_{n}}\right)=\left[\begin{matrix}Q & \mathbf{m} \\ \mathbf{0}^{T} & 1\end{matrix}\right]
   $$
 
-  the rotation submatrices $C_{j_i}^{rot}$ are converted to quaternions $\mathbf{q}_{j_i}$
+  the rotation submatrices $$C_{j_i}^{rot}$$ are converted to quaternions $$\mathbf{q}_{j_i}$$
 
   $$\mathbf{s}_{n}=\frac{\mathbf{s}}{\|\mathbf{s}\|}$$ , where $$\mathbf{s}=w_{1} \mathbf{q}_{j_{1}}+\ldots+w_{n} \mathbf{q}_{j_{n}}$$,  $$\mathbf{s}_{n}$$ is converted to the rotation matrix $$Q$$
 
