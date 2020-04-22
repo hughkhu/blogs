@@ -27,11 +27,11 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   $Q=\left(q_{0}, \vec{q}\right)$
 
-  $Q^{*}=\left(q_{0},-\vec{q}\right)$
+  $Q^{\star}=\left(q_{0},-\vec{q}\right)$
 
-  $\|Q\|^{2}=Q \cdot Q^{*}=q_{0}^{2}+q_{1}^{2}+q_{2}^{2}+q_{3}^{2}$
+  $\|Q\|^{2}=Q \cdot Q^{\star}=q_{0}^{2}+q_{1}^{2}+q_{2}^{2}+q_{3}^{2}$
 
-  $Q^{-1} = Q^{*} /\|Q\|^{2}$
+  $Q^{-1} = Q^{\star} /\|Q\|^{2}$
 
 - Multiplication
 
@@ -90,13 +90,13 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - Conjugation of a dual quaternion
 
-  $\hat{\mathbf{q}}^{*}=\mathbf{q}_{0}^{*}+\epsilon \mathbf{q}_{\epsilon}^{*}$
+  $ \hat{\mathbf{q}}^{\star}=\mathbf{q}_{0}^{\star} + \epsilon\mathbf{q}_{\epsilon}^{\star} $
 
 - Norm and Inverse
 
-  $\|\hat{\mathbf{q}}\|=\sqrt{\hat{\mathbf{q}}^{*} \hat{\mathbf{q}}}=\left\|\mathbf{q}_{0}\right\|+\epsilon \frac{\left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle}{\left\|\mathbf{q}_{0}\right\|}$
+  $\|\hat{\mathbf{q}}\|=\sqrt{\hat{\mathbf{q}}^{\star} \hat{\mathbf{q}}}=\left\|\mathbf{q}_{0}\right\|+\epsilon \frac{\left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle}{\left\|\mathbf{q}_{0}\right\|}$
 
-  $\hat{\mathbf{q}}^{-1}=\frac{\hat{\mathbf{q}}^{*}}{\|\hat{\mathbf{q}}\|^{2}}$
+  $\hat{\mathbf{q}}^{-1}=\frac{\hat{\mathbf{q\star}^{\star}}{\|\hat{\mathbf{q}}\|^{2}}$
 
   Unit dual quaternions are those satisfying $\|\hat{\mathbf{q}} \| = 1$, a dual quaternion $\hat{\mathbf{q}}$ is unit if and only if $\|\mathbf{q}_0\|=1$ and $\left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle=0$ 
 
@@ -118,9 +118,9 @@ This article introduces quaternion, dual-quaternion and their applications in sk
   
 - Transformation
 
-  $\hat{v}^{\prime}=\hat{\mathbf{q}} \cdot \hat{v} \cdot \bar{\hat{\mathbf{q}}^{*}}$
+  $\hat{v}^{\prime}=\hat{\mathbf{q}} \cdot \hat{v} \cdot \bar{\hat{\mathbf{q}}^{\star}}$
 
-  **pay attention that** $\bar{\hat{\mathbf{q}}^{*}}=\mathbf{q}_{0}^{*} - \epsilon \mathbf{q}_{\epsilon}^{*}$
+  **pay attention that** $\bar{\hat{\mathbf{q}}^{\star}}=\mathbf{q}_{0}^{\star} - \epsilon \mathbf{q}_{\epsilon}^{\star}$
 
 # 3. SBS
 
