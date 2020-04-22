@@ -17,7 +17,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - Definition
 
-  $$\begin{equation} Q=q_{0}+q_{1} \mathbf{i}+q_{2} \mathbf{j}+q_{3} \mathbf{k} \quad q_{i} \in \mathbb{R}, i=0, \ldots, 3 \end{equation}$$
+  $$ Q=q_{0}+q_{1} \mathbf{i}+q_{2} \mathbf{j}+q_{3} \mathbf{k} \quad q_{i} \in \mathbb{R}, i=0, \ldots, 3 $$
 
   $\mathbf{i} \cdot \mathbf{i}=\mathbf{j} \cdot \mathbf{j}=\mathbf{k} \cdot \mathbf{k}=\mathbf{i} \cdot \mathbf{j} \cdot \mathbf{k}=-1$
 
@@ -98,9 +98,9 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   $$\hat{\mathbf{q}}^{-1}=\frac{\hat{\mathbf{q}}^{\star}}{\|\hat{\mathbf{q}}\|^{2}}$$
 
-  Unit dual quaternions are those satisfying $\|\hat{\mathbf{q}} \| = 1$, a dual quaternion $\hat{\mathbf{q}}$ is unit if and only if $$ \|\mathbf{q}_0 \|=1 $$ and $$ \left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle=0 $$ 
+  Unit dual quaternions are those satisfying $$\|\hat{\mathbf{q}} \| = 1$$, a dual quaternion $\hat{\mathbf{q}}$ is unit if and only if $$ \|\mathbf{q}_0 \|=1 $$ and $$ \left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle=0 $$ 
 
-  The norm is *multiplicative* $\|\hat{\mathbf{p}} \hat{\mathbf{q}}\|=\|\hat{\mathbf{p}}\|\|\hat{\mathbf{q}}\|$
+  The norm is *multiplicative* $$\|\hat{\mathbf{p}} \hat{\mathbf{q}}\|=\|\hat{\mathbf{p}}\|\|\hat{\mathbf{q}}\|$$
 
   **Note that unit dual quaternions are always invertible (their inverse is just conjugation).** Just like ordinary quaternions, dual quaternions are also associative, distributive, but not commutative.
 
@@ -175,7 +175,7 @@ C_{a}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{a}^{r} &=C_{b}^{r o t} \mathbf{r}_{c}+\
 
 - Algorithm
 
-  **Input:** dual quaternions $\hat{\mathbf{q}}_{1}, \ldots, \hat{\mathbf{q}}_{p}$ (unifrom parameters)
+  **Input:** dual quaternions $$\hat{\mathbf{q}}_{1}, \ldots, \hat{\mathbf{q}}_{p}$$ (unifrom parameters)
 
   ​			vertex position $\mathbf{v}$ and normal $\mathbf{v}_n$
 
@@ -201,12 +201,12 @@ C_{a}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{a}^{r} &=C_{b}^{r o t} \mathbf{r}_{c}+\
   
     ​	$t_{2}=2\left(-w_{\epsilon} z_{0}-x_{\epsilon} y_{0}+y_{\epsilon} x_{0}+z_{\epsilon} w_{0}\right)$				
 
-​			$$ M=\left[\begin{matrix}1-2 y_{0}^{2}-2 z_{0}^{2} & 2 x_{0} y_{0}-2 w_{0} z_{0} & 2 x_{0} z_{0}+2 w_{0} y_{0} & t_{0} \\ 2 x_{0} y_{0}+2 w_{0} z_{0} & 1-2 x_{0}^{2}-2 z_{0}^{2} & 2 y_{0} z_{0}-2 w_{0} x_{0} & t_{1} \\ 2 x_{0} z_{0}-2 w_{0} y_{0} & 2 y_{0} z_{0}+2 w_{0} x_{0} & 1-2 x_{0}^{2}-2 y_{0}^{2} & t_{2}\end{matrix}\right] $$
+    ​	$$ M=\left[\begin{matrix}1-2 y_{0}^{2}-2 z_{0}^{2} & 2 x_{0} y_{0}-2 w_{0} z_{0} & 2 x_{0} z_{0}+2 w_{0} y_{0} & t_{0} \\ 2 x_{0} y_{0}+2 w_{0} z_{0} & 1-2 x_{0}^{2}-2 z_{0}^{2} & 2 y_{0} z_{0}-2 w_{0} x_{0} & t_{1} \\ 2 x_{0} z_{0}-2 w_{0} y_{0} & 2 y_{0} z_{0}+2 w_{0} x_{0} & 1-2 x_{0}^{2}-2 y_{0}^{2} & t_{2}\end{matrix}\right] $$
 
-​			$\mathbf{v}^{\prime}=M \mathbf{v}$ where $\mathbf{v}$ has form $\mathbf{v} = (v_0, v_1, v_2, 1)$
+    ​	$\mathbf{v}^{\prime}=M \mathbf{v}$ where $\mathbf{v}$ has form $\mathbf{v} = (v_0, v_1, v_2, 1)$
 
-​			$$\mathbf{v}_n^{\prime}=M \mathbf{v}_n$$ where $$\mathbf{v}$$ has form $$\mathbf{v}_n = (v_{n,0}, v_{n,1}, v_{n,2}, 1)$$
+    ​	$$\mathbf{v}_n^{\prime}=M \mathbf{v}_n$$ where $$\mathbf{v}$$ has form $$\mathbf{v}_n = (v_{n,0}, v_{n,1}, v_{n,2}, 1)$$
 
-​			Note that the formulas for $t_0, t_1, t_2$ are simply the expanded forms of quaternion product $2\mathbf{c}_{\epsilon}\mathbf{c}_0^\star$
+    ​	Note that the formulas for $t_0, t_1, t_2$ are simply the expanded forms of quaternion product $2\mathbf{c}_{\epsilon}\mathbf{c}_0^\star$
 
 
