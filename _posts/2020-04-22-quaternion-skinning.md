@@ -17,7 +17,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - Definition
 
-  $Q=q_{0}+q_{1} \mathbf{i}+q_{2} \mathbf{j}+q_{3} \mathbf{k} \quad q_{i} \in \mathbb{R}, i=0, \ldots, 3$
+  $$\begin{equation} Q=q_{0}+q_{1} \mathbf{i}+q_{2} \mathbf{j}+q_{3} \mathbf{k} \quad q_{i} \in \mathbb{R}, i=0, \ldots, 3 \end{equation}$$
 
   $\mathbf{i} \cdot \mathbf{i}=\mathbf{j} \cdot \mathbf{j}=\mathbf{k} \cdot \mathbf{k}=\mathbf{i} \cdot \mathbf{j} \cdot \mathbf{k}=-1$
 
