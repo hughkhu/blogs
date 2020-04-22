@@ -90,7 +90,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - Conjugation of a dual quaternion
 
-  $ \hat{\mathbf{q}}^{\star}=\mathbf{q}_{0}^{\star} + \epsilon\mathbf{q}_{\epsilon}^{\star} $
+  $$ \hat{\mathbf{q}}^{\star}=\mathbf{q}_{0}^{\star} + \epsilon\mathbf{q}_{\epsilon}^{\star} $$
 
 - Norm and Inverse
 
