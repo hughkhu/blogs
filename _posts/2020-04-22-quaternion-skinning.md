@@ -56,7 +56,15 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - to rotation matrix for $\mathbf{q}^{\prime}=w+x i+y j+z k$
 
-  $\left(\begin{array}{ccc}x^{2}+w^{2}-y^{2}-z^{2} & 2 x y-2 w z & 2 x z+2 w y \\ 2 x y+2 w z & y^{2}+w^{2}-x^{2}-z^{2} & 2 y z-2 w x \\ 2 x z-2 w y & 2 y z+2 w x & z^{2}+w^{2}-x^{2}-y^{2}\end{array}\right)$
+  $$
+  \left[
+  \begin{matrix}
+  x^{2}+w^{2}-y^{2}-z^{2} & 2 x y-2 w z & 2 x z+2 w y \\ 
+  2 x y+2 w z & y^{2}+w^{2}-x^{2}-z^{2} & 2 y z-2 w x \\
+  2 x z-2 w y & 2 y z+2 w x & z^{2}+w^{2}-x^{2}-y^{2}
+  \end{matrix}
+  \right]
+  $$
 
 - Rotation, for unit quaternion
 
@@ -72,25 +80,25 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - Definition
 
-  $\hat{\mathbf{q}}=\mathbf{q}_{0}+\varepsilon \mathbf{q}_{\varepsilon}$ where $\varepsilon^2=0$
+  $\hat{\mathbf{q}}=\mathbf{q}_{0}+\epsilon \mathbf{q}_{\epsilon}$  where $\epsilon^2=0$
 
   if $\hat{\mathbf{q}}$ isunit dual quaternion, the rotation is just a matrix representation of $\mathbf{q_0}$ and the translation is given by the vector part of $2\mathbf{q}_{\epsilon}\mathbf{q}_0^{\star}$
 
 - Multiplication
 
-  $\left(a_{0}+\varepsilon a_{\varepsilon}\right)\left(b_{0}+\varepsilon b_{\varepsilon}\right)=a_{0} b_{0}+\varepsilon\left(a_{0} b_{\varepsilon}+a_{\varepsilon} b_{0}\right)$
+  $\left(a_{0}+\epsilon a_{\epsilon}\right)\left(b_{0}+\epsilon b_{\epsilon}\right)=a_{0} b_{0}+\epsilon\left(a_{0} b_{\epsilon}+a_{\epsilon} b_{0}\right)$
 
 - Conjugation of a dual quaternion
 
-  $\hat{\mathbf{q}}^{*}=\mathbf{q}_{0}^{*}+\varepsilon \mathbf{q}_{\varepsilon}^{*}$
+  $\hat{\mathbf{q}}^{*}=\mathbf{q}_{0}^{*}+\epsilon \mathbf{q}_{\epsilon}^{*}$
 
 - Norm and Inverse
 
-  $\|\hat{\mathbf{q}}\|=\sqrt{\hat{\mathbf{q}}^{*} \hat{\mathbf{q}}}=\left\|\mathbf{q}_{0}\right\|+\varepsilon \frac{\left\langle\mathbf{q}_{0}, \mathbf{q}_{\varepsilon}\right\rangle}{\left\|\mathbf{q}_{0}\right\|}$
+  $\|\hat{\mathbf{q}}\|=\sqrt{\hat{\mathbf{q}}^{*} \hat{\mathbf{q}}}=\left\|\mathbf{q}_{0}\right\|+\epsilon \frac{\left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle}{\left\|\mathbf{q}_{0}\right\|}$
 
   $\hat{\mathbf{q}}^{-1}=\frac{\hat{\mathbf{q}}^{*}}{\|\hat{\mathbf{q}}\|^{2}}$
 
-  Unit dual quaternions are those satisfying $\|\hat{\mathbf{q}} \| = 1$, a dual quaternion $\hat{\mathbf{q}}$ is unit if and only if $\|\mathbf{q}_0\|=1$ and $\left\langle\mathbf{q}_{0}, \mathbf{q}_{\varepsilon}\right\rangle=0$ 
+  Unit dual quaternions are those satisfying $\|\hat{\mathbf{q}} \| = 1$, a dual quaternion $\hat{\mathbf{q}}$ is unit if and only if $\|\mathbf{q}_0\|=1$ and $\left\langle\mathbf{q}_{0}, \mathbf{q}_{\epsilon}\right\rangle=0$ 
 
   The norm is *multiplicative* $\|\hat{\mathbf{p}} \hat{\mathbf{q}}\|=\|\hat{\mathbf{p}}\|\|\hat{\mathbf{q}}\|$
 
@@ -98,21 +106,21 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - convert a 3D vector $(v_1, v_2, v_3)$ to a unit dual quaternion
 
-  $\hat{\mathbf{v}}=1+\varepsilon(v_1i+v_2j+v_3k)$
+  $\hat{\mathbf{v}}=1+\epsilon(v_1i+v_2j+v_3k)$
 
-- A unit dual quaternion $\hat{\mathbf{t}}:= 1 + \frac{\varepsilon}{2}(t_xi+t_yj+t_zk)$ corresponds to translation by vector $(t_x, t_y, t_z)$
+- A unit dual quaternion $\hat{\mathbf{t}}:= 1 + \frac{\epsilon}{2}(t_xi+t_yj+t_zk)$ corresponds to translation by vector $(t_x, t_y, t_z)$
 
 - Dual-Quaternion from Rotation and Translation
 
   - given a (dual) quaternion represents rotaion $\mathbf{q}_0$
   - and a quaternion represents translation $\mathbf{t}:= (t_xi+t_yj+t_zk)=(0, t_x,t_y,t_z)$
-  - $\hat{\mathbf{q}}=\hat{\mathbf{t}}\mathbf{q}_0=\left(1+\frac{\varepsilon}{2}\left(t_{x} i+t_{y} j+t_{z} k\right)\right) \mathbf{q}_{0}=\mathbf{q}_{0}+\frac{\varepsilon}{2}\left(t_{x} i+t_{y} j+t_{z} k\right) \mathbf{q}_{0}=\mathbf{q}_{0}+\frac{\varepsilon}{2} \mathbf{t}\mathbf{q}_{0}$
+  - $\hat{\mathbf{q}}=\hat{\mathbf{t}}\mathbf{q}_0=\left(1+\frac{\epsilon}{2}\left(t_{x} i+t_{y} j+t_{z} k\right)\right) \mathbf{q}_{0}=\mathbf{q}_{0}+\frac{\epsilon}{2}\left(t_{x} i+t_{y} j+t_{z} k\right) \mathbf{q}_{0}=\mathbf{q}_{0}+\frac{\epsilon}{2} \mathbf{t}\mathbf{q}_{0}$
   
 - Transformation
 
   $\hat{v}^{\prime}=\hat{\mathbf{q}} \cdot \hat{v} \cdot \bar{\hat{\mathbf{q}}^{*}}$
 
-  **pay attention that** $\bar{\hat{\mathbf{q}}^{*}}=\mathbf{q}_{0}^{*} - \varepsilon \mathbf{q}_{\varepsilon}^{*}$
+  **pay attention that** $\bar{\hat{\mathbf{q}}^{*}}=\mathbf{q}_{0}^{*} - \epsilon \mathbf{q}_{\epsilon}^{*}$
 
 # 3. SBS
 
@@ -124,7 +132,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
     $C_{a} \mathbf{r}_{c}=C_{b} \mathbf{r}_{c}, a<b, a, b \in\left\{j_{1}, \ldots, j_{n}\right\}$
 
-    $C_{i}=\left(\begin{array}{cc}C_{i}^{r o t} & \mathbf{C}_{i}^{t r} \\ \mathbf{0}^{T} & 1\end{array}\right)$
+    $C_{i}=\left[\begin{matrix}C_{i}^{r o t} & \mathbf{C}_{i}^{t r} \\ \mathbf{0}^{T} & 1\end{matrix}\right]$
 
     $\begin{aligned} C_{a}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{a}^{r} &=C_{b}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{b}^{t r} \\\left(C_{a}^{r o t}-C_{b}^{r o t}\right) \mathbf{r}_{c} &=\mathbf{C}_{b}^{t r}-\mathbf{C}_{a}^{t r} \end{aligned}$
 
@@ -132,7 +140,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
 - **QLERP** is good enough though it is inferior than **SLERP**
 
-  $q\left(W ; C_{j_{1}}, \ldots, C_{j_{n}}\right)=\left(\begin{array}{cc}Q & \mathbf{m} \\ \mathbf{0}^{T} & 1\end{array}\right)$
+  $q\left(W ; C_{j_{1}}, \ldots, C_{j_{n}}\right)=\left[\begin{matrix}Q & \mathbf{m} \\ \mathbf{0}^{T} & 1\end{matrix}\right]$
 
   the rotation submatrices $C_{j_i}^{rot}$ are converted to quaternions $\mathbf{q}_{j_i}$
 
@@ -140,7 +148,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   $\mathbf{m}=\sum_{i=1}^{n} w_{i} \mathbf{C}_{j_{i}}^{t r}$
   
-  $T=\left(\begin{array}{cc}I & \mathbf{r}_{c} \\ \mathbf{0}^{T} & 1\end{array}\right)$
+  $T=\left[\begin{matrix}I & \mathbf{r}_{c} \\ \mathbf{0}^{T} & 1\end{matrix}\right]$
   
   $\begin{aligned}\mathbf{v}^{\prime}=&T q\left(W ; T^{-1} C_{j_{1}} T, \ldots, T^{-1} C_{j_{n}} T\right) T^{-1} \mathbf{v}\\
   =&Q\left(\mathbf{v}-\mathbf{r}_{c}\right)+\sum_{i=1}^{n} w_{i} C_{j_{i}} \mathbf{r}_{c}
@@ -170,19 +178,19 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   ​	$\mathbf{c}_{0}=\mathbf{b}_{0} /\left\|\mathbf{b}_{0}\right\|$
   
-  ​	$\mathbf{c}_{\varepsilon}=\mathbf{b}_{\varepsilon} /\left\|\mathbf{b}_{0}\right\|$
+  ​	$\mathbf{c}_{\epsilon}=\mathbf{b}_{\epsilon} /\left\|\mathbf{b}_{0}\right\|$
   
   ​	// denote the components of $\mathbf{c}_0$ as $w_0, x_0, y_0, z_0$
   
   ​	// denote the components of $\mathbf{c}_{\epsilon}$ as $w_{\epsilon}, x_{\epsilon}, y_{\epsilon}, z_{\epsilon}$
   
-    ​	$t_{0}=2\left(-w_{\varepsilon} x_{0}+x_{\varepsilon} w_{0}-y_{\varepsilon} z_{0}+z_{\varepsilon} y_{0}\right)$  
+    ​	$t_{0}=2\left(-w_{\epsilon} x_{0}+x_{\epsilon} w_{0}-y_{\epsilon} z_{0}+z_{\epsilon} y_{0}\right)$  
   
-    ​	$t_{1}=2\left(-w_{\varepsilon} y_{0}+x_{\varepsilon} z_{0}+y_{\varepsilon} w_{0}-z_{\varepsilon} x_{0}\right)$  
+    ​	$t_{1}=2\left(-w_{\epsilon} y_{0}+x_{\epsilon} z_{0}+y_{\epsilon} w_{0}-z_{\epsilon} x_{0}\right)$  
   
-    ​	$t_{2}=2\left(-w_{\varepsilon} z_{0}-x_{\varepsilon} y_{0}+y_{\varepsilon} x_{0}+z_{\varepsilon} w_{0}\right)$				
+    ​	$t_{2}=2\left(-w_{\epsilon} z_{0}-x_{\epsilon} y_{0}+y_{\epsilon} x_{0}+z_{\epsilon} w_{0}\right)$				
 
-​			$M=\left(\begin{array}{cccc}1-2 y_{0}^{2}-2 z_{0}^{2} & 2 x_{0} y_{0}-2 w_{0} z_{0} & 2 x_{0} z_{0}+2 w_{0} y_{0} & t_{0} \\ 2 x_{0} y_{0}+2 w_{0} z_{0} & 1-2 x_{0}^{2}-2 z_{0}^{2} & 2 y_{0} z_{0}-2 w_{0} x_{0} & t_{1} \\ 2 x_{0} z_{0}-2 w_{0} y_{0} & 2 y_{0} z_{0}+2 w_{0} x_{0} & 1-2 x_{0}^{2}-2 y_{0}^{2} & t_{2}\end{array}\right)$
+​			$M=\left[\begin{matrix}1-2 y_{0}^{2}-2 z_{0}^{2} & 2 x_{0} y_{0}-2 w_{0} z_{0} & 2 x_{0} z_{0}+2 w_{0} y_{0} & t_{0} \\ 2 x_{0} y_{0}+2 w_{0} z_{0} & 1-2 x_{0}^{2}-2 z_{0}^{2} & 2 y_{0} z_{0}-2 w_{0} x_{0} & t_{1} \\ 2 x_{0} z_{0}-2 w_{0} y_{0} & 2 y_{0} z_{0}+2 w_{0} x_{0} & 1-2 x_{0}^{2}-2 y_{0}^{2} & t_{2}\end{matrix}\right]$
 
 ​			$\mathbf{v}^{\prime}=M \mathbf{v}$ where $\mathbf{v}$ has form $\mathbf{v} = (v_0, v_1, v_2, 1)$
 
