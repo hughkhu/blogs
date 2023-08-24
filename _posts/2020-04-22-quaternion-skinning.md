@@ -79,7 +79,7 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   $$\hat{\mathbf{q}}=\mathbf{q}_{0}+\epsilon \mathbf{q}_{\epsilon}$$  where $\epsilon^2=0$
 
-  if $\hat{\mathbf{q}}$ isunit dual quaternion, the rotation is just a matrix representation of $\mathbf{q_0}$ and the translation is given by the vector part of $2\mathbf{q}_{\epsilon}\mathbf{q}_0^{\star}$
+  if $\hat{\mathbf{q}}$ isunit dual quaternion, the rotation is just a matrix representation of $\mathbf{q_0}$ and the translation is given by the vector part of $\mathbf{t} = 2\mathbf{q}_{\epsilon}\mathbf{q}_0^{\star}$
 
 - Multiplication
 
@@ -119,13 +119,15 @@ This article introduces quaternion, dual-quaternion and their applications in sk
 
   **pay attention that** $$\bar{\hat{\mathbf{q}}^{\star}}=\mathbf{q}_{0}^{\star} - \epsilon \mathbf{q}_{\epsilon}^{\star}$$
 
+
+
 # 3. SBS
 
 *Spherical blend skinning: A real-time deformation of articulated models*
 
 - Center of Rotation $\mathbf{r}_c$
 
-  it is possible to define the rotation center as the point whose transformations by associated matrices are as close as possible. This minimizes the drift and works even if the vertex is assigned to $n$ joints $j_1,\cdots, j_n$. We find the center of rotation $\mathbf{r}_c$ as the least-squares solution of the system of $\left(\begin{array}{l}n \\ 2\end{array}\right)$ linear vector equations.
+  it is possible to define the rotation center as the point whose transformations by associated matrices are as close as possible. This minimizes the drift and works even if the vertex is assigned to $n$ joints $j_1,\cdots, j_n$. We find the center of rotation $\mathbf{r}_c$ as the least-squares solution of the system of $$\left(\begin{array}{l}n \\ 2\end{array}\right)$$ linear vector equations.
 
     $$C_{a} \mathbf{r}_{c}=C_{b} \mathbf{r}_{c}, a<b, a, b \in\left\{j_{1}, \ldots, j_{n}\right\}$$
 
@@ -141,26 +143,25 @@ C_{a}^{r o t} \mathbf{r}_{c}+\mathbf{C}_{a}^{r} &=C_{b}^{r o t} \mathbf{r}_{c}+\
   If we stack all these equations to one matrix $D$ and the right-hand sides to vector $\mathbf{e}$, we can write the whole system as $D \mathbf{r}_{c}=\mathbf{e}$, where $D$ is a $$3\left(\begin{array}{l}n \\ 2\end{array}\right) \times 3$$ matrix. Just solve this equation and get $\mathbf{r}_c$.
 
 - **QLERP** is good enough though it is inferior than **SLERP**
-
-  $$
+$$
   q\left(W ; C_{j_{1}}, \ldots, C_{j_{n}}\right)=\left[\begin{matrix}Q & \mathbf{m} \\ \mathbf{0}^{T} & 1\end{matrix}\right]
-  $$
+$$
 
-  the rotation submatrices $$C_{j_i}^{rot}$$ are converted to quaternions $$\mathbf{q}_{j_i}$$
+the rotation submatrices $$C_{j_i}^{rot}$$ are converted to quaternions $$\mathbf{q}_{j_i}$$
 
-  $$\mathbf{s}_{n}=\frac{\mathbf{s}}{\|\mathbf{s}\|}$$ , where $$\mathbf{s}=w_{1} \mathbf{q}_{j_{1}}+\ldots+w_{n} \mathbf{q}_{j_{n}}$$,  $$\mathbf{s}_{n}$$ is converted to the rotation matrix $$Q$$
+$$\mathbf{s}_{n}=\frac{\mathbf{s}}{\|\mathbf{s}\|}$$ , where $$\mathbf{s}=w_{1} \mathbf{q}_{j_{1}}+\ldots+w_{n} \mathbf{q}_{j_{n}}$$,  $$\mathbf{s}_{n}$$ is converted to the rotation matrix $$Q$$
 
-  $$\mathbf{m}=\sum_{i=1}^{n} w_{i} \mathbf{C}_{j_{i}}^{t r}$$
-  
-  $$
+$$\mathbf{m}=\sum_{i=1}^{n} w_{i} \mathbf{C}_{j_{i}}^{t r}$$
+
+$$
   T=\left[\begin{matrix}I & \mathbf{r}_{c} \\ \mathbf{0}^{T} & 1\end{matrix}\right]
-  $$
-  
-  $$
+$$
+
+$$
   \begin{aligned}\mathbf{v}^{\prime}=&T q\left(W ; T^{-1} C_{j_{1}} T, \ldots, T^{-1} C_{j_{n}} T\right) T^{-1} \mathbf{v}\\
   =&Q\left(\mathbf{v}-\mathbf{r}_{c}\right)+\sum_{i=1}^{n} w_{i} C_{j_{i}} \mathbf{r}_{c}
   \end{aligned}
-  $$
+$$
 
 # 4. DQS
 
